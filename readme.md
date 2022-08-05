@@ -1,4 +1,4 @@
-Basic communication between two applications using apache activemq.
+Boilerplate to setup a [Postgres](https://www.postgresql.org/ "Postgres' Homepage") database with [Prisma](https://www.prisma.io/ "Prisma's Homepage") ORM.
 
 # Run it with docker
 
