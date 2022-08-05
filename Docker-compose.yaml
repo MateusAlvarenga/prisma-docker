@@ -1,0 +1,34 @@
+version: '3'
+
+name: "prisma-postgresql"
+services:
+
+    database:
+        build:
+            context: "./database"
+            dockerfile: Dockerfile
+        image: "database:dev"
+        container_name: "database"
+        expose:
+            - "5432"
+        ports:
+             - "5432:5432"
+        networks: 
+             - network
+        tty: true
+
+    prisma:
+        build:
+            context: "./prisma"
+            dockerfile: Dockerfile
+        image: "prisma:dev"
+        container_name: "prisma"
+        ports:
+            - "5555:5555"
+        networks: 
+            - network 
+        tty: true
+
+networks:
+    network:
+      driver: bridge
