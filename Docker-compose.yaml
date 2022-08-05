@@ -3,12 +3,13 @@ version: '3'
 name: "prisma-postgresql"
 services:
 
-    database:
-        build:
-            context: "./database"
-            dockerfile: Dockerfile
-        image: "database:dev"
+    database: 
+        image: postgres:13.7-alpine3.16
         container_name: "database"
+        environment:
+            - POSTGRES_PASSWORD=postgres
+            - POSTGRES_USER=postgres        
+        working_dir: /var/lib/postgresql/data
         expose:
             - "5432"
         ports:
@@ -16,6 +17,7 @@ services:
         networks: 
              - network
         tty: true
+        restart: always
 
     prisma:
         build:
@@ -28,6 +30,9 @@ services:
         networks: 
             - network 
         tty: true
+        volumes:
+            - ./prisma/prisma/:/prisma/prisma/
+         
 
 networks:
     network:
