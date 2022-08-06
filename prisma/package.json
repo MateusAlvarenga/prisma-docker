@@ -6,7 +6,7 @@
   "scripts": {
     "init": "prisma init",
     "generate": "prisma generate",
-    "migrate": "prisma migrate dev",
+    "migrate": "prisma migrate dev --name $(date +%F_%H-%M-%S)",
     "studio": "prisma studio",
     "introspect": "prisma introspect",
     "docs": "prisma-docs-generator serve",

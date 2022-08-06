@@ -18,6 +18,8 @@ services:
              - network
         tty: true
         restart: always
+        depends_on:
+            - prisma
 
     prisma:
         build:

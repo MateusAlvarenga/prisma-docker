@@ -6,16 +6,9 @@ Boilerplate to setup a [Postgres](https://www.postgresql.org/ "Postgres' Homepag
 $ docker-compose up -d
 ```
 
-## open prisma container
-
-```
-$ docker exec -it prisma bash
-or
-$ docker attach prisma
-```
-
 ## migrate database
 
 ```
-$ npm run migrate
+$ docker exec prisma npm run migrate
+
 ```
