@@ -9,6 +9,6 @@ $ docker-compose up -d
 ## migrate database
 
 ```
-$ docker exec prisma npm run migrate
+$ docker exec prisma npm run m
 
 ```

@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "init": "prisma init",
-    "generate": "prisma generate",
-    "migrate": "prisma migrate dev --name $(date +%F_%H-%M-%S)",
-    "studio": "prisma studio",
-    "introspect": "prisma introspect",
-    "docs": "prisma-docs-generator serve",
-    "format": "prisma format"
+    "g": "prisma generate",
+    "m": "prisma migrate dev --name $(date +%F_%H-%M-%S)",
+    "md": "prisma migrate deploy --name $(date +%F_%H-%M-%S)",
+    "s": "prisma studio",
+    "i": "prisma introspect",
+    "d": "prisma-docs-generator serve",
+    "f": "prisma format"
   },
   "keywords": [],
   "author": "",
