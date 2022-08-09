@@ -12,14 +12,12 @@ services:
         working_dir: /var/lib/postgresql/data
         expose:
             - "5432"
-        ports:
-             - "5432:5432"
+        # ports:
+        #      - "5432:5432"
         networks: 
              - network
         tty: true
         restart: always
-        depends_on:
-            - prisma
 
     prisma:
         build:
@@ -27,8 +25,9 @@ services:
             dockerfile: Dockerfile
         image: "prisma:dev"
         container_name: "prisma"
+        command: wait-for database:5432 -t 40 -- ./start.sh
         ports:
-            - "5555:5555"
+            - "3030:5555"
         networks: 
             - network 
         tty: true
