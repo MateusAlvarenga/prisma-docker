@@ -10,22 +10,10 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id        String   @id @default(cuid())
-  name      String
-  email     String
-  password  String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  Post      Post[]
-}
-
-model Post {
-  id        String   @id @default(cuid())
-  title     String
-  content   String
-  author    User     @relation(fields: [userId], references: [id])
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  userId    String
+model employee {
+  id     Int    @id @default(autoincrement())
+  name   String
+  phone  String
+  email  String
+  branch String
 }

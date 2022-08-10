@@ -7,3 +7,6 @@ WORKDIR /prisma
 COPY . .
 
 RUN apt update && apt install -y wget netcat
+
+RUN npm install
+
