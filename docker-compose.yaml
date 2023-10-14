@@ -21,7 +21,7 @@ services:
       dockerfile: Dockerfile
     image: "prisma:dev"
     container_name: "prisma"
-    command: wait-for database:5432 -t 40 -- ./start.sh
+    command: sh -c 'wait-for database:5432 -t 40 && ./prisma/prisma'
     ports:
       - "3030:5555"
     networks:
